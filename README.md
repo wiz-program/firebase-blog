@@ -16,7 +16,7 @@
 
 **🌐 ライブデモ**: [https://blog-8598a.web.app](https://blog-8598a.web.app)
 
-![ブログアプリのスクリーンショット](https://via.placeholder.com/800x400/667eea/ffffff?text=Blog+App+Screenshot)
+![ブログアプリのスクリーンショット](./Demoshoot.png)
 
 ## 🛠️ 技術スタック
 
