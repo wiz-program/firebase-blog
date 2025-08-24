@@ -16,7 +16,9 @@
 
 **🌐 ライブデモ**: [https://blog-8598a.web.app](https://blog-8598a.web.app)
 
-![ブログアプリのスクリーンショット](https://github.com/wiz-program/firebase-blog/blob/main/Demoshoot.png?raw=true)
+![ブログアプリのスクリーンショット](https://via.placeholder.com/800x400/667eea/ffffff?text=Blog+App+Screenshot)
+
+*実際のアプリは[デモサイト](https://blog-8598a.web.app)でご確認ください*
 
 ## 🛠️ 技術スタック
 
