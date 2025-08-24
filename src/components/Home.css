@@ -1,0 +1,222 @@
+.homePage {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 40px 20px;
+  gap: 30px;
+}
+
+.homePage .postContents {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.homePage .postContents::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.homePage .postContents:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.postHeader h1 {
+  text-align: center;
+  margin: 0 0 20px 0;
+  color: #2d3748;
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.postTextContainer {
+  height: auto;
+  word-wrap: break-word;
+  width: 100%;
+  margin: 20px 0;
+  line-height: 1.8;
+  color: #4a5568;
+  font-size: 16px;
+  background: rgba(102, 126, 234, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+}
+
+.nameAndDeleteButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.nameAndDeleteButton button {
+  flex: 10%;
+  background-color: #dc3545;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.nameAndDeleteButton button:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4);
+}
+
+.nameAndDeleteButton button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+}
+
+.nameAndDeleteButton button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.nameAndDeleteButton button:hover::before {
+  left: 100%;
+}
+
+.nameAndDeleteButton h3 {
+  flex: 1;
+  color: #667eea;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nameAndDeleteButton h3::before {
+  content: '👤';
+  font-size: 16px;
+}
+
+/* レスポンシブ対応 */
+/* タブレット対応 */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .homePage {
+    padding: 30px 20px;
+    gap: 25px;
+  }
+  
+  .homePage .postContents {
+    max-width: 700px;
+    padding: 25px;
+  }
+  
+  .postHeader h1 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .homePage {
+    padding: 20px 10px;
+    gap: 20px;
+  }
+  
+  .homePage .postContents {
+    padding: 20px;
+    margin: 0 10px;
+  }
+  
+  .postHeader h1 {
+    font-size: 24px;
+  }
+  
+  .postTextContainer {
+    padding: 15px;
+    font-size: 15px;
+  }
+  
+  .nameAndDeleteButton {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .nameAndDeleteButton button {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .homePage {
+    padding: 15px 5px;
+    gap: 15px;
+  }
+  
+  .homePage .postContents {
+    padding: 15px;
+    margin: 0 5px;
+    border-radius: 15px;
+  }
+  
+  .postHeader h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .postTextContainer {
+    padding: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 15px 0;
+  }
+  
+  .nameAndDeleteButton {
+    margin-top: 15px;
+    padding-top: 15px;
+    gap: 10px;
+  }
+  
+  .nameAndDeleteButton h3 {
+    font-size: 12px;
+  }
+  
+  .nameAndDeleteButton button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}

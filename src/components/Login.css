@@ -1,0 +1,148 @@
+.loginPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 70px);
+  padding: 20px;
+}
+
+.loginContainer {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.loginContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.loginContainer h1 {
+  color: #2d3748;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.loginContainer p {
+  color: #4a5568;
+  font-size: 16px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.loginButton {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.loginButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.loginButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.loginButton:hover::before {
+  left: 100%;
+}
+
+.loginButton:active {
+  transform: translateY(-1px);
+}
+
+.loginButton svg {
+  font-size: 18px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .loginPage {
+    padding: 15px;
+  }
+  
+  .loginContainer {
+    padding: 30px 20px;
+    max-width: 350px;
+  }
+  
+  .loginContainer h1 {
+    font-size: 24px;
+  }
+  
+  .loginContainer p {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+  
+  .loginButton {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loginPage {
+    padding: 10px;
+  }
+  
+  .loginContainer {
+    padding: 25px 15px;
+    max-width: 300px;
+  }
+  
+  .loginContainer h1 {
+    font-size: 22px;
+  }
+  
+  .loginContainer p {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  
+  .loginButton {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+}

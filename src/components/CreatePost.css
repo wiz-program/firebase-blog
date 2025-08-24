@@ -1,0 +1,209 @@
+.createPostPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 70px);
+  padding: 20px;
+}
+
+.postContainer {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 400px;
+  width: 100%;
+  max-width: 600px;
+  gap: 25px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.postContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.postContainer h1 {
+  margin: 0;
+  text-align: center;
+  color: #2d3748;
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.postContainer .inputPost {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.postContainer .inputPost div {
+  font-weight: 600;
+  color: #4a5568;
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.postContainer .inputPost input {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.postContainer .inputPost input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.postContainer .inputPost.textarea {
+  flex: 1;
+}
+
+.postContainer .inputPost textarea {
+  width: 100%;
+  min-height: 120px;
+  outline: none;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.postContainer .inputPost textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.postButton {
+  padding: 15px 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.postButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.postButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.postButton:hover::before {
+  left: 100%;
+}
+
+.postButton:active {
+  transform: translateY(0);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .createPostPage {
+    padding: 10px;
+  }
+  
+  .postContainer {
+    padding: 20px;
+    gap: 15px;
+    margin: 10px;
+  }
+  
+  .postContainer h1 {
+    font-size: 24px;
+  }
+  
+  .postContainer .inputPost input,
+  .postContainer .inputPost textarea {
+    font-size: 16px; /* iOSでズームを防ぐ */
+  }
+  
+  .postContainer .inputPost div {
+    font-size: 14px;
+  }
+  
+  .postButton {
+    padding: 12px 0;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .createPostPage {
+    padding: 5px;
+  }
+  
+  .postContainer {
+    padding: 15px;
+    gap: 12px;
+    margin: 5px;
+    border-radius: 15px;
+  }
+  
+  .postContainer h1 {
+    font-size: 20px;
+  }
+  
+  .postContainer .inputPost input {
+    height: 35px;
+    padding: 6px 10px;
+    font-size: 16px;
+  }
+  
+  .postContainer .inputPost textarea {
+    min-height: 100px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .postContainer .inputPost div {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  
+  .postButton {
+    padding: 10px 0;
+    font-size: 13px;
+    border-radius: 20px;
+  }
+}
